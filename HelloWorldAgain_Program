@@ -1,0 +1,308 @@
+using HelloWorldAgain.Math;
+using System;
+
+namespace HelloWorldAgain
+{
+    
+    class Program
+    {
+        static void Main(string[] args)
+         {
+
+            ////****** Enums  part 35*****
+
+
+            var method = ShippingMethod.Express;
+            Console.WriteLine((int)method);
+
+            //casting
+            //ex: we receive the method ID but we want the shipping name
+           
+            var methodId = 3;
+            Console.WriteLine((ShippingMethod)methodId);
+
+            Console.WriteLine(method.ToString());
+
+            Console.WriteLine(method);  // by default uses the method ToString()
+
+
+            //Parsing : getting a string and converting it to a different type
+            //ex:we receive a method name (string) and we need to conver it to Enum ShippingMethod
+
+
+            var methodName = "Express";
+            var shippingMethod = Enum.Parse(typeof(ShippingMethod), methodName);
+            Console.WriteLine((int)shippingMethod);
+
+
+
+            ////******Strings  part 32
+
+
+            //string firstName = "Agustin";
+            //var lastName = "Miller";
+
+            ////Using String class
+
+            //String alias = "Pepito";
+
+            //var fullName = firstName + "" + lastName;
+
+
+            ////Using String Format static method
+            //var myFullName = string.Format("My name is {0}{1}", firstName, lastName);
+            //Console.WriteLine(@"firstName lastName alias");
+
+            //var names = new string[3] { "Jack", "John", "Mary" };
+            //var formattedNames = string.Join(",", names);
+            //Console.WriteLine(formattedNames);
+
+
+            ////VERBATIM string
+            //var textV = @"Hi John
+            //    Look into the following paths
+            //    c:\folder1\folder2\
+            //    c:\folder3\folder4 ";
+            //Console.WriteLine(textV);
+
+            ////Normal string
+            //var text = "Hi John\nLook into the following paths\nc:\\folder1\\folder2\nc:\\folder3\\folder4";
+            ////Console.WriteLine(text);
+
+
+            //***********Arrays part 31
+            /*
+            int[] numbers = new int[3];
+            numbers[0] = 1;
+
+            Console.WriteLine(numbers [0]);
+            Console.WriteLine(numbers[1]);
+            Console.WriteLine(numbers[2]);
+
+            var flags = new bool[3];
+            flags[0] = true;
+
+            Console.WriteLine(flags[0]);
+            Console.WriteLine(flags[1]);
+            Console.WriteLine(flags[2]);
+
+
+            var names = new string[3] { "Jack", "John", "Mary" };
+            Console.WriteLine(names[0]);
+            Console.WriteLine(names[1]);
+            Console.WriteLine(names[2]);
+            
+            Console.WriteLine("-----------------");
+
+            */
+
+            /*            
+          // Person john = new Person(); or shorter use var
+
+          var john = new Person();
+          john.FirstName = "John";
+          john.LastName = "Smith";
+          john.Introduce();
+
+          Calculator calculator = new Calculator();
+        var sum = calculator.add(3, 4);
+
+          Console.WriteLine(sum);
+
+
+          */
+            ////*********  PART 23  ******
+
+            //byte number = 255;
+
+            //number += 2;
+
+            //Console.WriteLine(number);
+            /////
+            //var a = 1;
+            //var b = 2;
+            //var c = 3;
+
+            ////****Logical operators****
+
+            //Console.WriteLine(!(c > b || c == a)); //false
+            //Console.WriteLine(c > b || c == a); //true
+            //Console.WriteLine(c > b && c == a); //false
+            //Console.WriteLine(c >b && c>a); //true
+
+            //////****Comparison Operators****
+            //// to negatives should be converted to a positve same as
+            //Console.WriteLine(a==b);
+            //Console.WriteLine(!(a != b)); //this should be converted as a==b
+
+            //Console.WriteLine(a!= b);
+            //Console.WriteLine(a==b);
+            //Console.WriteLine(a >b);
+
+            ////****Operator precedence****
+
+            //var a = 10;
+            //var b = 2;
+            //var c = 3;
+
+            ////To change precedence you have to use parenthesis
+            //Console.WriteLine((a + b) * c);
+
+            ////Multiply or division operators have higher precedence than add or substract
+            //Console.WriteLine(a+b*c);
+
+            //****Operators****
+
+            /*
+             var a = 10;
+             var b = 3;
+
+             //division (float)
+             Console.WriteLine((float)a /(float) b);
+
+
+             //division (integers)
+             Console.WriteLine(a / b);
+
+             //addition
+             Console.WriteLine(a + b);         
+             */
+
+            //*********  PART 20  ******
+            //****Type conversion****
+
+
+            //Not compatible types
+
+            //Conversion with Exception handeling 
+
+            ////example2
+            //try
+            //{
+            //    string str = "true";
+            //    bool b = Convert.ToBoolean(str);
+            //    Console.WriteLine(b);
+            //}
+            //catch (Exception)
+            //{
+            //    Console.WriteLine("Unable  to convert Int to Byte");
+            //}
+
+            ////example1
+            //try
+            //{
+            //    var number = "1234";
+            //    int b = Convert.ToByte(number);
+            //    Console.WriteLine(b);
+            //}
+            //catch (Exception)
+            //{
+            //    Console.WriteLine("Unable  to convert Int to Byte");
+            //}
+
+            ////this conversion below will yield an Unhandled Exception Overflow
+            //var number = "1234";
+            //int b = Convert.ToByte(number);
+            //Console.WriteLine(b);
+
+            ////cound also be: string number = "1234";
+            //var number = "1234";
+            //int i = Convert.ToInt32(number);
+            //Console.WriteLine(i);
+
+
+
+            /************/
+
+            //  compatible types
+
+            // converting int larger than 255 to byte using a cast
+            // will be data loss, as it prints 232 because some of the bits were lost
+            //int i = 1000;
+            //byte b = (byte)i;
+            //Console.WriteLine(b);
+
+
+            // converting int to byte using a cast
+            //int i = 1;
+            //byte b =(byte)i;
+            //Console.WriteLine(b);
+
+
+            //byte b = 1;
+            //int i = b;
+            //Console.WriteLine(i);
+
+            /*
+            //*********  PART 18  ******
+            //constants
+
+          const float Pi = 3.14f;
+
+ 
+
+           // Pi = 1;  this is wrong,as constanst cannot change after defined.
+           */
+
+            ////"{0} {1}"  is called formatString  
+            //Console.WriteLine("{0} {1}",byte.MinValue,byte.MaxValue);
+            //Console.WriteLine("{0} {1}", float.MinValue, float.MaxValue);
+
+            ////    byte number=2;
+            ////    int count = 10;
+            ////    float totalPrice = 20.95f;
+            ////    char character = 'A';
+            ////    bool isWorking = false;
+
+            ////    //not a native 
+
+            ////    string firstName = "Agustin";
+
+
+            ////same with var keyword
+
+            //    var number = 2;
+            //    var count = 10;
+            //    var totalPrice = 20.95f;
+            //    var character = 'A';
+            //    var isWorking = false;
+
+            //    //not a native 
+
+            //    var firstName = "Agustin";
+
+            //    Console.WriteLine("Hello World!" + number);
+            //    Console.WriteLine( number);
+            //    Console.WriteLine(count);
+            //    Console.WriteLine(totalPrice);
+            //    Console.WriteLine(character);
+            //    Console.WriteLine(isWorking);
+            //    Console.WriteLine(firstName);
+        }
+    }
+
+
+    //************  enums part 35
+    public enum ShippingMethod
+    {
+        RegularAirMail = 1,
+        RestrictedAirMail =2,
+        Express =3,
+    }
+
+
+}
+    // ******** Primitive types 
+    //Integral Numbers:
+    //byte
+    //short
+    //int
+    //long
+    //float
+    //Real numbers:
+    //double
+    //decimal
+    //Character:
+    //char
+    //Boolean:
+    //bool
