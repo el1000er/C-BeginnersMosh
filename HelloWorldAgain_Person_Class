@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace HelloWorldAgain
+{
+    public class Person
+    {
+        public string FirstName;
+        public string LastName;
+
+        public void Introduce()
+        {
+            Console.WriteLine("my name is " + FirstName + " and last name " + LastName);
+        }
+
+    }
+}
