@@ -1,0 +1,86 @@
+using System;
+
+namespace Exercises_part43
+{
+    class Program
+    {
+        public enum ImageOrientation
+        {
+            Landscape,
+            Portrait
+        }
+        static void Main(string[] args)
+        {
+
+            ////**Ej 4
+            ///
+            Console.WriteLine("Please enter speed limit ");
+            var speedLimit = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter car's speed  ");
+            var carSpeed = Convert.ToInt32(Console.ReadLine());
+
+            if (carSpeed<speedLimit)
+            {
+                Console.WriteLine("ok");
+
+            }
+            else
+            {
+                const int kmPerDemeritPoint = 5;
+                var demeritPoints = (carSpeed - speedLimit) / kmPerDemeritPoint;
+                  if(demeritPoints>=12)
+                    Console.WriteLine("licence is suspended");
+                  else
+                    Console.WriteLine("Demerit points: "+demeritPoints);            }
+
+
+            //////**Ej 3
+            /////
+            //Console.WriteLine("Please enter width ");           
+            //var width = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Please enter height ");
+            //var height = Convert.ToInt32(Console.ReadLine());
+
+            //var orientation = (width > height) ? ImageOrientation.Landscape : ImageOrientation.Portrait;
+            //Console.WriteLine("Image orientation is "+orientation);
+
+
+            //////** Ej 2
+            /////
+            //Console.WriteLine("Please enter first number");
+            ////var input1=Console.ReadLine();
+            ////var number1 = Convert.ToInt32(input1);
+            ////or better just one line
+            //var number1 = Convert.ToInt32(Console.ReadLine());
+
+            //Console.WriteLine("Please enter second number");
+            //var input2 = Console.ReadLine();
+            //var number2 = Convert.ToInt32(input2);
+
+            //if (number1>number2)             
+            //    Console.WriteLine(number1);            
+            //else
+            //    Console.WriteLine(number2);
+
+            ////Mosh's solution
+
+            //var max = (number1 > number2) ? number1 : number2;
+            //Console.WriteLine("Max is "+max);
+
+            //// ** Ej 1
+            ///
+            //Console.WriteLine("Enter a number between 1 and 10");
+            //var input = Console.ReadLine();
+            //var number = Convert.ToInt32(input);
+            //if (number > 0 && number <= 10)
+            //{
+            //    Console.WriteLine("Number is Valid");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Number is not valid");
+            //}
+
+        }
+    }
+}
