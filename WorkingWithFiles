@@ -1,0 +1,131 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace WorkingWithFiles
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ////Working with File and FileInfo (using System.IO)
+            ////File provides static methods.
+            ////FileInfo provide instance methods.
+            ////Good for a small number of operations against a file
+
+            //File.Copy("c:\\temp\\myfile.jpg", "d:\\temp\\myfile.jpg", true);
+
+            ////the same using verbatim string
+
+            //var path = @"c:\somefile.jpg";
+            //File.Copy(@"c:\temp\myfile.jpg", @"d:\temp\myfile.jpg", true);
+
+            //File.Delete(path);
+            //if (File.Exists(path))
+            //{
+
+            //}
+
+            ////Read all the text in a fikle
+            //var content = File.ReadAllText(path);
+
+
+            ////Equivalent in the FileInfo class
+            //// FileInfo its more efficient when working with large number of operations
+            //var fileInfo = new FileInfo(path);
+            //fileInfo.CopyTo("...");
+            //fileInfo.Delete();
+
+            ////fileInfo.Exists it's a property not a method
+            //if(fileInfo.Exists)
+            //{
+            //    //
+            //}
+
+            //fileInfo.OpenRead   // this is more complicated that File.ReadAllText//
+
+            /*****dierctory and DirectoryInfo******/
+
+
+            //Directory.CreateDirectory(@"c:\temp\folder1");
+
+            //var files= Directory.GetFiles(@"c:\projects\CSharpFundamentals", "*,*", SearchOption.AllDirectories);
+            //foreach (var file in files) 
+            //Console.WriteLine(file);
+
+            //var directories = Directory.GetDirectories(@"c:\projects\CSharpFundamentals", "*.*", SearchOption.AllDirectories);
+            //foreach(var directory in directories)
+            //    Console.WriteLine(directory);
+
+            //Directory.Exists("...");
+
+            ///*Directory Info*/
+
+            //var directoryInfo = new DirectoryInfo("...");
+            //directoryInfo.GetFiles();
+            //directoryInfo.GetDirectories();
+
+
+
+            /********Path Class********/
+
+            // var path = @"C:\Projects\CSharpFundamentals\HelloWorld\HelloWorld.sln";
+
+            // //For example if i want to get the extension of the .sln files I can
+            // //go for this low level hard path of getting it
+            //var dotIndex= path.IndexOf('.');
+            // var extension= path.Substring(dotIndex);
+
+
+            // //using the Path Class
+
+            // Console.WriteLine("Extension: " + Path.GetExtension(path));
+            // Console.WriteLine("Filename: "+Path.GetFileName(path));
+            // Console.WriteLine("File Name without Extension: "+Path.GetFileNameWithoutExtension(path));
+            // Console.WriteLine("Directory name: ",Path.GetDirectoryName(path));
+
+
+            ////Exercise 1
+            //1 - Write a program that reads a text
+            //    file and displays the number of words.
+
+           // var path = @"c:\Users\amiller130\FileToReadAllText.txt";
+           // var content = File.ReadAllText(path);
+
+           // var letters = 0;
+           // foreach(var character in content)
+           //// Console.WriteLine(content);
+           // letters++;
+
+           // Console.WriteLine(letters);
+
+            ////Exercise 2
+            ///2- Write a program that reads a text file 
+            ///and displays the longest word in the file.
+            ///
+            var path = @"c:\Users\amiller130\FileToReadAllText.txt";
+            var content = File.ReadAllText(path);
+
+            var words = content.Replace(Environment.NewLine, " ").Split(' ');
+
+            Console.WriteLine("Most longest word in " + Path.GetFileName(path) + " file is " + WordLongestChecker(words));
+
+
+
+
+        }
+        private static string WordLongestChecker(string[] words)
+            {
+                var wordHolder = words[0];
+                for (int i = 1; i < (words.Length - 1); i++)
+                {
+                    if (wordHolder.Length < words[i].Length)
+                        wordHolder = words[i];
+                }
+
+                return wordHolder;
+            }
+
+
+    }
+}
