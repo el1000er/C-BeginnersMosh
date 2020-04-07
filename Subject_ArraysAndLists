@@ -1,0 +1,309 @@
+using System;
+using System.Collections.Generic;
+
+namespace ArraysAndLists
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //******LISTS
+
+            /*
+                        var numbers = new List<int>() { 1, 2, 3, 4 };
+                        numbers.Add(1);
+                        numbers.AddRange(new int[3] { 5, 6, 7 });
+
+                        foreach (var number in numbers)
+                            Console.WriteLine(number);
+
+                        Console.WriteLine();
+                        Console.WriteLine("Index of 1: " + numbers.IndexOf(1));
+                        Console.WriteLine("LastIndex of 1: " + numbers.LastIndexOf(1));
+
+                        Console.WriteLine("Count: " + numbers.Count);
+
+                        //this will remove the first 1 that it finds
+                        numbers.Remove(1);
+                        foreach (var n in numbers)
+                            Console.WriteLine(n);
+
+                        //if i want to remove all matching items have to use for
+                        //we cant use foreach because we are modifing the collection
+                        Console.WriteLine("Removing all matching numbers to 1: ");
+                        for (var i = 0; i < numbers.Count; i++)
+                        {
+                            if (numbers[i] == 1)
+                                numbers.Remove(numbers[i]);
+                        }
+                        foreach (var number in numbers)
+                            Console.WriteLine(number);
+
+                        //To Remove all items of the list
+                        numbers.Clear();
+                        Console.WriteLine("Result of Clear() methodf");
+                        foreach (var number in numbers)
+
+                            Console.WriteLine(number);
+
+            */
+            //******* ARRAYS
+            /*
+            var numbers = new[] { 3, 7, 5, 2, 14, 6 };
+
+            //Lenght
+            Console.WriteLine("Length: " + numbers.Length);
+
+            //IndexOf()
+            var index = Array.IndexOf(numbers, 5);
+            Console.WriteLine("Index of 5 is: " + index);
+
+            //Clear()
+            //if we have an array of numbers, it will clear them to 0
+            //if we have an array of bools, it  will turn then to false
+            //if we have an array of strings, it will turn them to null
+            Array.Clear(numbers, 0, 2);
+            foreach (var n in numbers)
+                Console.WriteLine(n);
+
+            //Copy
+            int[] anotherArray = new int[3];
+            Array.Copy(numbers, anotherArray, 3);
+            Console.WriteLine("Effect of Copy(): ");
+            foreach (var n in anotherArray)
+                Console.WriteLine(n);
+
+            //Sort()
+            Console.WriteLine("Effect of Sort(): ");
+            Array.Sort(numbers);
+            foreach (var n in numbers)
+                Console.WriteLine(n);
+
+            //Reverse()
+            Array.Reverse(numbers);
+            Console.WriteLine("Effect of Reverse(): ");
+            foreach (var n in numbers)
+                Console.WriteLine(n);
+
+    */
+
+
+            //****** exercises
+
+
+
+
+
+            /*
+             * 1- When you post a message on Facebook, 
+             * depending on the number of people who like
+             * your post, Facebook displays different 
+             * information.
+
+                If no one likes your post, it doesn't 
+                display anything.
+                If only one person likes your post,
+                it displays: [Friend's Name] likes your 
+                post.
+                If two people like your post, 
+                it displays: [Friend 1] and [Friend 2] 
+                like your post.
+                If more than two people like your post, 
+                it displays: [Friend 1], [Friend 2] 
+                and [Number of Other People] others like
+                your post.
+                Write a program and continuously 
+                ask the user to enter different names,
+                until the user presses Enter 
+                (without supplying a name). 
+                Depending on the number of names provided,
+                display a message based on the above 
+                pattern.
+             */
+
+
+            //var names =new List<string>();
+            //while (true)
+            //{
+
+            //    Console.Write("Enter a name (or 'ok' to exit): ");
+            //    var input = Console.ReadLine();
+
+            //    if (String.IsNullOrWhiteSpace(input))
+            //        break;
+
+            //    names.Add(input);
+            //}
+
+            //if (names.Count > 2)
+            //    Console.WriteLine("{0},{1} and {2} others like your post",
+            //        names[0], names[1], names.Count - 2);
+            //else if (names.Count == 2)
+            //    Console.WriteLine("{0}, and {1} {2} like your post",
+            //    names[0], names[1]);
+            //else if (names.Count == 1)
+            //    Console.WriteLine("{0} like your post",
+            //    names[0] );
+            //else
+            //    Console.WriteLine();
+
+            //foreach (var n in names)
+            //    Console.Write(n);
+
+
+            /*
+            2 - Write a program and ask the user to enter
+                their name.
+                Use an array to reverse the name and then
+                store the result in a new string.
+                Display the reversed name on the console.
+             */
+
+            ////My Solution
+            //Console.WriteLine("Please enter your name ");
+            //var input = Console.ReadLine();
+            //var array = input.ToCharArray();           
+
+            // Array.Reverse(array);
+            //Console.WriteLine("Reversed name: ");
+            //foreach (var n in array)
+            //Console.Write(n);
+            //Console.WriteLine();
+
+            ////Mosh's solution
+            //Console.WriteLine("What's your name? ");
+            //var name = Console.ReadLine();
+
+            //Console.WriteLine(name[4]);
+            //var array = new char[name.Length];
+
+            //for (var i = name.Length; i > 0; i--)
+
+            //    array[name.Length - i] = name[i - 1];
+
+            //var reversed = new string(array);
+
+
+            //Console.WriteLine("Reversed name: "+reversed);
+
+            /*
+            3 - Write a program and ask the user to enter
+                5 numbers.
+                If a number has been previously entered, 
+                 display an error message and ask the user
+                to re-try.
+                 Once the user successfully 
+                enters 5 unique numbers, 
+                sort them and display the result on the 
+                console.
+                */
+
+            //var numbers= new List <int>();
+            //while (numbers.Count < 5)
+            //{
+            //    Console.WriteLine("please enter a number: ");
+            //    var number = Convert.ToInt32(Console.ReadLine());
+            //    if (numbers.Contains(number))
+            //    {
+            //        Console.WriteLine("You have already added {0} to the collection",number);
+            //        continue;
+            //     }
+            //    numbers.Add(number);
+            // }
+            //numbers.Sort();
+            //foreach (var number in numbers)
+            //Console.WriteLine(number);
+
+            /*
+             * 4- Write a program and ask the user to 
+             * continuously enter a number or type "Quit"
+             * to exit. The list of numbers may include 
+             * duplicates. 
+             * Display the unique numbers that the user
+             * has entered.
+             */
+
+
+
+            //var numbers = new List<int>();
+
+            //while (true)
+            //{
+            //    Console.WriteLine("Please enter a number or type Quit");
+            //    var input = Console.ReadLine();
+
+            //    if (input.ToLower() == "quit")
+            //    {
+            //        Console.WriteLine("bye");
+            //        break;
+            //    }
+
+            //    numbers.Add(Convert.ToInt32(input));
+
+            //    var uniques = new List<int>();
+            //    foreach (var n in numbers)
+            //    {
+            //        if (!uniques.Contains(n))
+            //            uniques.Add(n);
+            //    }
+
+            //    Console.WriteLine("Unique numbers: ");
+            //    foreach (var number in uniques)
+            //        Console.WriteLine(number);
+
+            //}
+
+            /*
+            5 - Write a program and ask the user 
+                to supply a list of comma separated 
+                numbers(e.g 5, 1, 9, 2, 10). 
+                If the list is empty or includes less 
+                than 5 numbers, display "Invalid List" 
+                and ask the user to re-try; otherwise, 
+                display the 3 smallest numbers in the 
+                list.
+                */
+
+            string[] elements;
+            while (true)
+            {
+                Console.Write("Enter a list of comma-separated numbers: ");
+                var input = Console.ReadLine();
+
+                if (!String.IsNullOrWhiteSpace(input))
+                {
+                    elements = input.Split(',');
+                    if (elements.Length >= 5)
+                        break;
+                }
+
+                Console.WriteLine("Invalid List");
+            }
+
+            var numbers = new List<int>();
+            foreach (var number in elements)
+                numbers.Add(Convert.ToInt32(number));
+
+            var smallests = new List<int>();
+            while (smallests.Count < 3)
+            {
+                // Assume the first number is the smallest
+                var min = numbers[0];
+                foreach (var number in numbers)
+                {
+                    if (number < min)
+                        min = number;
+                }
+                smallests.Add(min);
+
+                numbers.Remove(min);
+            }
+
+            Console.WriteLine("The 3 smallest numbers are: ");
+            foreach (var number in smallests)
+                Console.WriteLine(number);
+
+        }
+    }
+}
