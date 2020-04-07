@@ -1,0 +1,267 @@
+using System;
+
+namespace ControlFlow
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //*** Iteration Statements
+            //For loops
+            //Foreach loops
+            //While loops
+            //Do-While loops
+
+
+            //RANDOM class
+
+            //generate random password and store in an array to later conver it to string
+
+            ////  to avoid magic numbers in the for loop, and buffer length we create a const
+            //const int passwordlength = 10;
+
+            //var random = new random();
+
+            //var buffer = new char[passwordlength];
+
+            //for (var i = 0; i < passwordlength; i++)
+            //   buffer[i]= ((char)('a' + random.next(0, 26)));
+
+            //var password = new string(buffer);
+
+            //console.writeline(password);
+
+            ////generate random password
+
+            //var random = new Random();
+            //for (var i = 0; i < 10; i++)
+            //    Console.Write((char)('a'+random.Next(0, 26)));
+            //Console.WriteLine();
+
+            ////generate random numbers between 1-10
+            //var random = new Random();
+            //for (var i =0;i<10;i++)
+            //    Console.WriteLine(random.Next(1,10)); 
+
+
+            ////while loop with continue
+            ///
+            //while (true)
+
+            //{
+            //    Console.Write("type your name");
+            //    var input = Console.ReadLine();
+
+            //    if (!string.IsNullOrWhiteSpace(input))
+
+            //    { 
+            //    Console.WriteLine("@Echo: " + input);
+            //        continue; // this continue makes the code go to the beginning of the loop 
+            //    }
+            //    break;
+            //}
+
+
+            ////** While loops
+            ////it is used mostly when we don't know aead of thime how many times
+            ////we will do the iteration
+
+            ////ex
+
+            //while (true)
+
+            //{
+            //    Console.Write("type your name");
+            //    var input = Console.ReadLine();
+
+            //    if (string.IsNullOrWhiteSpace(input))
+            //        break;
+
+            //    Console.WriteLine("@Echo: "+input);
+            //}
+
+            ////this below is like a FOR
+
+            //var i = 0;
+            //while (i<=10)
+            //{
+            //    if (i % 2 == 0)
+            //        Console.WriteLine(i);
+            //    i++;
+            //}
+
+
+
+            ////**FOREACH
+
+            ////foreach through an array
+
+            //var numbers = new int[] { 1, 2, 3, 4 };
+            //foreach(var number in numbers)
+            //{ 
+            //    Console.WriteLine(number); 
+            //}
+
+
+            //var name = "John Smith";
+
+            ////2-the same with Foreach loop
+
+            //foreach (var character in name)
+            //{
+            //    Console.WriteLine(character);
+            //}
+
+
+            ////1-Using FOR LOOP
+            //  for (var i = 0; i < name.Length; i++)
+            //  {
+            //      Console.WriteLine(name[i]);
+            //  }
+
+            ////For loops
+
+            //for (var i = 1; i <= 10; i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        Console.WriteLine(i);
+            //    }
+            //}
+
+            ////reverse
+
+            //for (var i = 10; i >= 1; i--)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        Console.WriteLine(i);
+            //    }
+            //}
+
+            //Exercices 
+            /*
+             * 1- Write a program to count how many numbers between 1
+             * and 100 are divisible by 3 with no remainder. 
+             * Display the count on the console.
+             */
+
+            //var contador = 0;           
+
+            //for (var i=1;i<=100;i++)
+            //{
+            //    if (i%3==0)                    
+            //        contador++;                  
+
+            //}
+            //Console.WriteLine("there are {0} numbers divisble by 3 between 1 and 100", contador);
+
+            /*
+            2 - Write a program and continuously ask 
+                the user to enter a number or "ok" to 
+                exit. 
+                Calculate the sum of all the previously 
+                entered numbers and display it on the 
+                console.
+                */
+
+            //var number = new int();
+            //number = 0;
+
+            //while (true)
+
+            //{
+            //    Console.Write("type a number please or type ok to exit ");
+            //    var input = Console.ReadLine();
+
+            //    if (input.ToUpper()=="OK")
+            //        break;
+
+            //     number += Convert.ToInt32(input);
+            //    Console.WriteLine("The sum of all numbers is {0}",number);
+            //    Console.WriteLine();
+
+            //}
+
+            ///*
+            //3 - Write a program and ask the user to enter
+            //    a number. Compute the factorial of 
+            //    the number and print it on the console. 
+            //    For example, if the user enters 5, 
+            //    the program should calculate 
+            //    5 x 4 x 3 x 2 x 1 and display it as 
+            //    5! = 120.
+            //    */
+
+
+
+            //Console.WriteLine("please Enter a number ");
+
+            //var number = Convert.ToInt32(Console.ReadLine());
+
+            //var factorial = 1;
+            //for (var i = 1; i <=number; i++)
+            //    factorial *= i;
+
+            //Console.WriteLine("{0}! ={1}",number,factorial);
+
+
+            ///*
+            // 4- Write a program that picks a random number
+            // between 1 and 10. Give the user 4 chances to 
+            // guess the number. If the user guesses the 
+            // number, display “You won"; otherwise,
+            // display “You lost". 
+            // (To make sure the program is behaving 
+            // correctly, you can display the secret number
+            // on the console first.)
+            // */
+
+            //var random = new Random();
+            //var secretNumber = random.Next(1, 10);
+
+
+
+            //for(var i=0;i<4;i++)
+            //{
+
+            //    Console.WriteLine("GUess the secret nnumber: ");
+            //    var guess = Convert.ToInt32(Console.ReadLine());
+
+            //    if (guess==secretNumber)
+            //    {
+            //        Console.WriteLine("you guessed it!");
+            //        return;
+            //    }
+
+
+            //}
+            //Console.WriteLine("You lost secret number was {0}",secretNumber);
+
+            /*
+            5 - Write a program and ask the user to enter a 
+                series of numbers  separated by comma.
+                Find the maximum of the numbers and display it on 
+                the console. 
+                For example, if the user enters “5, 3, 8, 1, 4", " +
+                "the program should display 8.
+                */
+
+            Console.WriteLine("Please enter a series of numbers sepparated by commas");
+
+            var input =Console.ReadLine();
+            var numbers = input.Split(',');
+
+            //Assume the first number is the max
+            var max = Convert.ToInt32(numbers[0]);
+
+            foreach(var str in numbers)
+            {
+                var number = Convert.ToInt32(str);
+                if (number > max)
+                    max = number;
+            }
+            Console.WriteLine("Max is " +max);
+        }
+    }
+}
