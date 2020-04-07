@@ -1,0 +1,63 @@
+using System;
+
+namespace ReferenceAndValueTypes
+{
+
+    public class Person
+    {
+        public int Age;
+    }
+    class Program
+    {
+       
+        static void Main(string[] args)
+        {
+
+            //** Value types (primitive types), memory allocated automatically
+            //which are custom Structures!!: Int, char, float, bool,
+            //var a will still be 10 as  Int are value types
+           // the values are copied not the actual element in Stack
+           // creating an independent value
+           
+            var a = 10;
+            var b = a;
+            b++;
+            Console.WriteLine(string.Format("a:{0},b:{1}",a,b));
+
+            //***************  Example 2 part 38
+
+            var number = 1;
+            Increment(number);
+            Console.WriteLine("the value type nubmer is: "+number);
+
+            var person = new Person() { Age = 20 };
+            MakeOld(person);
+            Console.WriteLine("The reference type Person age is: "+person.Age);
+
+            //**  Reference types (Non Primitive types )
+            //those are CLASSES (array, string or any  Custom Classes)
+            //need to allocate memory manually using the New operator
+            //when we use New we tell runtime to allocate heap memory allocation
+            //1st- an object is created on the Heap with a memory location/address
+            //2nd the runtime or clr creates a varialbe on the stack identified as array1
+            //the value inside this variable is the memory addres for the object on the heap
+
+            var array1 = new int[3] { 1, 2, 3 };
+            var array2 = array1;
+            array2[0] = 0;
+
+            Console.WriteLine(string.Format("array1[0]:{0},array2[0]:{1}",array1[0],array2[0]));
+
+        }
+
+        //***************  Example 2 part 38
+        public static void Increment(int number)
+        {
+            number += 10;
+        }
+        public  static void MakeOld(Person person)
+        {
+            person.Age += 10;
+        }
+    }
+}
