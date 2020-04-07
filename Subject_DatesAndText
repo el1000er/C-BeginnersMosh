@@ -1,0 +1,379 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DatesAndText
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+
+            ////*****************String Builder*******
+            ///Its a class defined in System.Text namespace
+            ///Represents a mutable string.
+            ///Not optimized for searching (IndexOf(),LastIndexOf(),Contains()..)
+            ///Good for manipulating string (Append(),Insert(),Remove(),Replace(),Clear())
+            ///
+
+            //var builder = new StringBuilder()
+            //.Append('-', 10)
+            //.AppendLine()
+            //.Append("Header")
+            //.AppendLine()
+            //.Append('-', 10)
+
+            //.Replace('-', '+')
+
+            //.Remove(0, 10)
+
+            //.Insert(0, new String('-', 10));
+            //Console.WriteLine(builder);
+
+            //Console.WriteLine("first character"+builder[0]);
+
+
+            ////******************Summarising Text******
+            //var sentence = "THis is going to be a really  really  really really really long text.";
+            //var summary = StringUtility.SummerizeText(sentence);
+            //Console.WriteLine( summary);
+
+
+
+
+
+            // ////*****************STRINGS **********
+
+            // var fullName = "Agustin Miller ";
+            // Console.WriteLine("Trim: '{0}'", fullName.Trim());
+            // Console.WriteLine("Trim + ToUpper: '{0}'", fullName.Trim().ToUpper());
+
+            // //to separate string between space
+            // var index = fullName.IndexOf(' ');
+            // var firstName = fullName.Substring(0, index);
+            // var LastName = fullName.Substring(index+1);
+            // Console.WriteLine("First Name: "+firstName);
+            // Console.WriteLine("Last Name: "+LastName);
+
+            // // easier way to do the same
+            //var namesArray = fullName.Split(' ');
+            // Console.WriteLine("First Name: " + namesArray[0]);
+            // Console.WriteLine("First Name: " + namesArray[1]);
+
+            // Console.WriteLine(fullName.Replace("Agustin", "Chota"));
+            // Console.WriteLine(fullName.Replace("g", "G")); 
+
+            // if(String.IsNullOrEmpty(null))
+            //     Console.WriteLine("Invalid null");
+
+            // if (String.IsNullOrEmpty(""))
+            //     Console.WriteLine("Invalid empty");
+
+            // if (String.IsNullOrEmpty(" "))
+            //     Console.WriteLine("Invalid empty?");
+
+            // //for whitespace we can
+            // if (String.IsNullOrEmpty(" ".Trim()));
+            //     Console.WriteLine("Empty space Trimmed, Invalid");
+
+            // //Or better use "this new method"
+
+            // if (String.IsNullOrWhiteSpace(" ")) ;
+            // Console.WriteLine("this input is whitespace, please enter something");
+
+            // //converting numbers as string and viceversa
+
+            // var str = "25";
+            // var  number = Convert.ToInt32(str);
+            // Console.WriteLine("str to int "+number);
+            // var age = Convert.ToByte(str); //because nobody is older than 255?
+            // Console.WriteLine("str to byte "+age);
+
+            // float price = 299.95f;
+            // Console.WriteLine("Price ToString(): "+price.ToString());
+
+            // Console.WriteLine("Price ToString('C') currency format : " + price.ToString("C"));
+            // Console.WriteLine("Price ToString('C0') currency format no decimals: " + price.ToString("C0"));
+
+
+
+            //////************* TimeSpan **************
+            /////
+            //var timeSpan = new TimeSpan(1, 2, 3);
+            //Console.WriteLine("H,m,s"+timeSpan);
+            //var timeSpan2 = TimeSpan.FromHours(1);
+
+
+            //var start = DateTime.Now;
+            //var end = DateTime.Now.AddMinutes(2);
+
+            //var duration = end - start;
+            //Console.WriteLine("duration :"+duration);
+
+            ////Properties
+
+            //Console.WriteLine("Minutes: " + timeSpan.Minutes);
+            //Console.WriteLine("Total Minutes: " + timeSpan.TotalMinutes);
+
+            ////Add and substract methods, they return a new timespan
+
+            //Console.WriteLine("Add Example: " + timeSpan.Add(TimeSpan.FromMinutes(8)));
+            //Console.WriteLine("Substract Example: " + timeSpan.Subtract(TimeSpan.FromMinutes(8)));
+
+            ////ToString
+            //Console.WriteLine("TimeSpan ToString "+ timeSpan.ToString());
+
+            ////Parse 
+            //Console.WriteLine("TimeSpan Parse "+TimeSpan.Parse("01:02:03"));
+
+
+
+
+            ////********************   Datatetime  *****************
+            ////also  they are inmutable
+
+            //var datetime = new DateTime(2015, 1, 1);
+            //var now = DateTime.Now;
+            //var today = DateTime.Today;
+
+            //Console.WriteLine("Today: "+today);
+            //Console.WriteLine("Hour: "+now.Hour);
+            //Console.WriteLine("Minute: " + now.Minute);
+
+            //var tomorrow = now.AddDays(1);
+            //var yesterday = now.AddDays(-1);
+
+            //Console.WriteLine(now.ToLongDateString());
+            //Console.WriteLine(now.ToShortDateString());
+            //Console.WriteLine(now.ToLongTimeString());
+            //Console.WriteLine(now.ToShortTimeString());
+            //Console.WriteLine(now.ToString("yyyy-MM-dd"));
+            //Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm"));
+
+            ////https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+            ///
+
+            /////***************** Exercises****************
+
+            /*
+            1 - Write a program and ask the user to enter
+                a few numbers separated by a hyphen.
+                Work out if the numbers are consecutive.
+                For example, if the input is "5-6-7-8-9"
+                    or "20-19-18-17-16",
+                 display a message: "Consecutive"; 
+                  otherwise, display "Not Consecutive".
+            */
+
+            //Console.WriteLine("Please enter numbers separated by hyphen: ");
+            //  var input = Console.ReadLine();
+            //var inputArray = input.Split('-');
+
+            ////this is to check if inputArray was bringing inputs without -
+            ////for (var i=0;i<inputArray.Length;i++)
+            ////    Console.WriteLine(inputArray[i]);
+
+            //var numbers = new List<int>();
+
+            //foreach (var i in inputArray)
+            //{
+            //    var number = Convert.ToInt32(i);
+            //    numbers.Add(number);
+
+            //}
+            //numbers.Sort();
+
+            //var isConsecutive = true;
+            //for (var i=1;i<numbers.Count;i++)
+            //{
+            //    if(numbers[i] != numbers[i-1]+1)
+            //    {
+            //        isConsecutive = false;
+            //        break;
+            //    }
+            //}
+            //var message = isConsecutive ? "Consecutive" : "Not Consecutive";
+            //Console.WriteLine(message);
+
+
+
+
+            /*
+            2 - Write a program and ask the user to enter
+                a few numbers separated by a hyphen.
+                If the user simply presses Enter,
+                without supplying an input, 
+                exit immediately; otherwise, 
+                check to see if there are duplicates. 
+                If so, display "Duplicate" on the console.
+            */
+
+            //Console.WriteLine("Please enter numbers separated by hyphen: ");
+            //var input = Console.ReadLine();
+
+            //if (String.IsNullOrWhiteSpace(input))
+            //    return;
+
+            //var numbers = new List<int>();
+            //foreach (var number in input.Split('-'))
+            //    numbers.Add(Convert.ToInt32(number));
+
+            //var uniques = new List<int>();
+            //var includesDuplicates = false;
+            //foreach (var number in numbers)
+            //{
+            //    if (!uniques.Contains(number))
+            //        uniques.Add(number);
+            //    else
+            //    {
+            //        includesDuplicates = true;
+            //        break;
+            //    }
+            //}
+
+            //if (includesDuplicates)
+            //    Console.WriteLine("Duplicate");
+
+
+
+
+            /*3- Write a program and ask the user to 
+             * enter a time value in the 24-hour time 
+             * format (e.g. 19:00).
+             * A valid time should be between 00:00 
+             * and 23:59. 
+             * If the time is valid, display "Ok"; 
+             * otherwise, display "Invalid Time". 
+             * If the user doesn't provide any values, 
+             * consider it as invalid time.
+             */
+
+            //Console.WriteLine("Please enter time value in 24-hour format(e.g. 19:00): ");
+            //var input = Console.ReadLine();
+
+
+            //if (String.IsNullOrWhiteSpace(input))
+            //{
+            //    Console.WriteLine("Invalid Time");
+            //    return;
+            //}
+
+
+
+            //var components = input.Split(':');
+            //if (components.Length !=2)
+            //{
+            //    Console.WriteLine("Invalid time");
+            //    return;
+            //}
+
+            //try
+            //{
+            //    var hour = Convert.ToInt32(components[0]);
+            //    var minute = Convert.ToInt32(components[1]);
+
+            //    if(hour >= 0 && hour <=23 && minute >=0 && minute <=59)
+            //        Console.WriteLine("Ok"); 
+            //    else
+            //        Console.WriteLine("Invalid Time");
+            //}
+            //catch(Exception)
+            //{
+            //    Console.WriteLine("Invalid time");
+            //}
+
+
+
+
+
+            /*4- Write a program and ask the user to enter 
+             * a few words separated by a space. 
+             * Use the words to create a variable name with 
+             * PascalCase.
+             * For example, if the user types: "number of students",
+             * display "NumberOfStudents". 
+             * Make sure that the program is not dependent 
+             * on the input. 
+             * So, if the user types "NUMBER OF STUDENTS", 
+             * the program should still display "NumberOfStudents".
+             */
+
+            //Console.WriteLine("Please enter few words");
+            //var input = Console.ReadLine();
+
+            //var variableName = PascalCasing(input);
+
+            //Console.WriteLine( variableName);
+
+            
+
+            /*5- Write a program and ask the user to enter
+             * an English word. 
+             * Count the number of vowels 
+             * (a, e, o, u, i) in the word. 
+             * So, if the user enters "inadequate", 
+             * the program should display 6 on the console.
+             * 
+             */
+
+            //Console.WriteLine("Please enter an English word");
+            //// Note the ToLower() here. This is used to count for both A and a.           
+            //var input = Console.ReadLine().ToLower();
+
+            //// calling VowelsCounter method as part of Procedural Programming
+            //var vowelsCounter = VowelsCounter(input);
+
+
+            //Console.WriteLine("Numbers of vowels in the word is {0} ",vowelsCounter);
+
+
+
+        }
+
+
+        //Ex 5
+        //Created VowelsCounter as procedural programming part 69
+        //public static string VowelsCounter(string word)
+        //{
+        //    var vowels = new List<Char>(new char[] { 'a', 'e', 'o', 'u', 'i' });
+        //    var vowelsCount = 0;
+
+        //    foreach (var character in word)
+        //    {
+        //        if (vowels.Contains(character))
+        //            vowelsCount++;
+        //    }
+
+        //    return vowelsCount.ToString();
+        //}
+
+
+        //Ex 4
+        //Created VowelsCounter as procedural programming part 69
+        public static string PascalCasing (string word)
+        {
+
+            if (String.IsNullOrWhiteSpace(word))
+            {
+                Console.WriteLine("Error");
+                return null;
+            }
+
+            var variableName = "";
+            var words = word.Split(' ');
+
+            foreach (var w in words)
+            {
+                var wordWithPascalCase = char.ToUpper(w[0]) + w.ToLower().Substring(1);
+                variableName += wordWithPascalCase;
+            }
+
+            return variableName;
+
+        }
+
+
+    }
+}
